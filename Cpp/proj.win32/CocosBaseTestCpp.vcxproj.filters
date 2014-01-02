@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\game">
+      <UniqueIdentifier>{a18ca09a-aefd-4b20-b989-5eb81f40beaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CocosBase">
+      <UniqueIdentifier>{d46f7ced-51c4-42b6-87b1-1df588016c15}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\LoginScene.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\MainScene.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\BackpackScene.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCBundle.cpp">
+      <Filter>Classes\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCDirectorEx.cpp">
+      <Filter>Classes\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCMessageProtocol.cpp">
+      <Filter>Classes\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCSceneEx.cpp">
+      <Filter>Classes\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCDialog.cpp">
+      <Filter>Classes\CocosBase</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\LoginScene.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\MainScene.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\BackpackScene.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCBundle.h">
+      <Filter>Classes\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCDirectorEx.h">
+      <Filter>Classes\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCMessageProtocol.h">
+      <Filter>Classes\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCSceneEx.h">
+      <Filter>Classes\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\cocos-base.h">
+      <Filter>Classes\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCDialog.h">
+      <Filter>Classes\CocosBase</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
