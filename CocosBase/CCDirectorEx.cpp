@@ -677,7 +677,7 @@ void CCDirectorEx::removeUnusedCachedDialogs()
 	}
 }
 
-void CCDirectorEx::showDialog(CCDialog* pDialog, int nZOrder = 0)
+void CCDirectorEx::showDialog(CCDialog* pDialog, int nZOrder)
 {
 	CCAssert(pDialog, "should not null");
 

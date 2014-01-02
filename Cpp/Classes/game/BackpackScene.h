@@ -4,7 +4,7 @@
 #include "../CocosBase/cocos-base.h"
 using namespace cocos2d;
 
-class BackpackScene : public CCSceneEx, public CCTouchDelegate
+class BackpackScene : public CCSceneEx
 {
 public:
 	CREATE_SCENE_FUNC(BackpackScene);
