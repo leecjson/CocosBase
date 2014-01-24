@@ -7,8 +7,15 @@ LOCAL_MODULE := cocos2dcpp_shared
 LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp
+../../../CocosBase/CCBundle.cpp \
+../../../CocosBase/CCMsgDelegate.cpp \
+../../../CocosBase/CCMsgManager.cpp \
+../../../CocosBase/CCSceneExtension.cpp \
+../../../CocosBase/CCSceneExTransition.cpp \
+../../../CocosBase/CCSceneManager.cpp \
+../../Classes/AppDelegate.cpp \
+../../Classes/MenuScene.cpp \
+../../Classes/Test/BasicSceneTest/BasicSceneTest.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 

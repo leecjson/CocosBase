@@ -394,8 +394,6 @@ void CCSceneManager::handleSceneSwitch(ccSCENESWITCH& tSceneSwitch)
 
 			addCachableScene(pScene);
 
-			unsigned int index = m_vRunningSceneStack.size();
-
 			m_bSendCleanupToScene = true;
 			m_vRunningSceneStack.back()->release();
 			m_vRunningSceneStack.pop_back();
@@ -601,20 +599,25 @@ void CCSceneManager::removeUnusedCachedScenes()
 	if( m_mSceneCachePool.empty() )
 		return;
 
+	vector<map<string, CCSceneExtension*>::iterator> removeStack;
 	map<string, CCSceneExtension*>::iterator itr = m_mSceneCachePool.begin();
 	map<string, CCSceneExtension*>::iterator end = m_mSceneCachePool.end();
 
-	for(; itr != end; )
+	for(; itr != end; ++itr )
 	{
 		if( itr->second->isSingleReference() )
 		{
 			itr->second->release();
-			itr = m_mSceneCachePool.erase(itr);
+			removeStack.push_back(itr);
 		}
-		else
-		{
-			++itr;
-		}
+	}
+
+	unsigned int i = 0;
+	unsigned int c = m_mSceneCachePool.size();
+
+	for(; i < c; ++i )
+	{
+		m_mSceneCachePool.erase(removeStack[i]);
 	}
 }
 
@@ -700,6 +703,7 @@ bool CCSceneManager::loadSceneResources(CCSceneExtension* pScene)
 		if( pInScene->isLoadingResourcesAsync() )
 		{
 			pInScene->loadResourcesAsync();
+			pInScene->setLoaded(true);
 			return true;
 		}
 		else
@@ -786,10 +790,7 @@ void CCSceneManager::debugSceneSwitchInfo()
 			strStackText.append(pClassName).append(" -> ");
 		}
 	}
-	strStackText.pop_back();
-	strStackText.pop_back();
-	strStackText.pop_back();
-	strStackText.pop_back();
+	strStackText.erase(strStackText.size() - 4);
 
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 	SetWindowTextA(CCEGLView::sharedOpenGLView()->getHWnd(), strStackText.c_str());

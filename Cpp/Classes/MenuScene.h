@@ -1,7 +1,7 @@
 #ifndef __MENUSCENE_H__
 #define __MENUSCENE_H__
 
-#include "../CocosBase/cocos-base.h"
+#include "../../CocosBase/cocos-base.h"
 #include "cocos-ext.h"
 using namespace cocos2d;
 using namespace cocos2d::extension;

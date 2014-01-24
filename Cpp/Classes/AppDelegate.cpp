@@ -1,5 +1,5 @@
 ﻿#include "AppDelegate.h"
-#include "../CocosBase/cocos-base.h"
+#include "../../CocosBase/cocos-base.h"
 #include "MenuScene.h"
 #include "Test/BasicSceneTest/BasicSceneTest.h"
 
