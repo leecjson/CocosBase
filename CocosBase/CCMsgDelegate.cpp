@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2014 viva-Lijunlin
+Copyright (c) 2014 Lijunlin - Jason lee
 
-Created by Li JunLin on 2014
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,28 +24,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#ifndef __CCBASE_MESSAGEPROTOCOL_H__
-#define __CCBASE_MESSAGEPROTOCOL_H__
-
-#include "cocos2d.h"
+#include "CCMsgDelegate.h"
 
 NS_CC_BEGIN
 
-/**
- * class    : CCMessageProtocol
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 消息接口定义
- */
-class CCMessageProtocol
+CCMsgDelegate::CCMsgDelegate()
 {
-public:
-	CCMessageProtocol();
-
-public:
-	virtual void onMessage(unsigned int uMsg, CCObject* pMsgObj, void* wParam, void* lParam){};
-};
+	
+}
 
 NS_CC_END
-
-#endif //__CCBASE_MESSAGEPROTOCOL_H__

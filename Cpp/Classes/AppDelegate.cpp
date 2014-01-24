@@ -1,8 +1,7 @@
 ﻿#include "AppDelegate.h"
 #include "../CocosBase/cocos-base.h"
-#include "game/LoginScene.h"
-#include "game/MainScene.h"
-#include "game/BackpackScene.h"
+#include "MenuScene.h"
+#include "Test/BasicSceneTest/BasicSceneTest.h"
 
 USING_NS_CC;
 
@@ -28,11 +27,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 	pEGLView->setDesignResolutionSize(960, 640, kResolutionShowAll);
 
-	REGISTER_SCENE_FUNC(LoginScene);
-	REGISTER_SCENE_FUNC(MainScene);
-	REGISTER_SCENE_FUNC(BackpackScene);
+	REGISTER_SCENE_FUNC(MenuScene);
+	REGISTER_SCENE_FUNC(BasicSceneTest);
+	REGISTER_SCENE_FUNC(BasicUIScene);
 
-	CCDirectorEx::sharedDirector()->runWithScene(SeekScene("LoginScene"));
+	CCSceneManager::sharedManager()->runWithScene(LoadScene("MenuScene"));
 
     return true;
 }

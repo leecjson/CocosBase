@@ -128,27 +128,28 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\CocosBase\CCBundle.cpp" />
-    <ClCompile Include="..\..\CocosBase\CCDialog.cpp" />
-    <ClCompile Include="..\..\CocosBase\CCDirectorEx.cpp" />
-    <ClCompile Include="..\..\CocosBase\CCMessageProtocol.cpp" />
-    <ClCompile Include="..\..\CocosBase\CCSceneEx.cpp" />
+    <ClCompile Include="..\..\CocosBase\CCMsgDelegate.cpp" />
+    <ClCompile Include="..\..\CocosBase\CCMsgManager.cpp" />
+    <ClCompile Include="..\..\CocosBase\CCSceneExtension.cpp" />
+    <ClCompile Include="..\..\CocosBase\CCSceneExTransition.cpp" />
+    <ClCompile Include="..\..\CocosBase\CCSceneManager.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\game\BackpackScene.cpp" />
-    <ClCompile Include="..\Classes\game\LoginScene.cpp" />
-    <ClCompile Include="..\Classes\game\MainScene.cpp" />
+    <ClCompile Include="..\Classes\MenuScene.cpp" />
+    <ClCompile Include="..\Classes\Test\BasicSceneTest\BasicSceneTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\CocosBase\CCBaseMacros.h" />
     <ClInclude Include="..\..\CocosBase\CCBundle.h" />
-    <ClInclude Include="..\..\CocosBase\CCDialog.h" />
-    <ClInclude Include="..\..\CocosBase\CCDirectorEx.h" />
-    <ClInclude Include="..\..\CocosBase\CCMessageProtocol.h" />
-    <ClInclude Include="..\..\CocosBase\CCSceneEx.h" />
+    <ClInclude Include="..\..\CocosBase\CCMsgDelegate.h" />
+    <ClInclude Include="..\..\CocosBase\CCMsgManager.h" />
+    <ClInclude Include="..\..\CocosBase\CCSceneExtension.h" />
+    <ClInclude Include="..\..\CocosBase\CCSceneExTransition.h" />
+    <ClInclude Include="..\..\CocosBase\CCSceneManager.h" />
     <ClInclude Include="..\..\CocosBase\cocos-base.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\game\BackpackScene.h" />
-    <ClInclude Include="..\Classes\game\LoginScene.h" />
-    <ClInclude Include="..\Classes\game\MainScene.h" />
+    <ClInclude Include="..\Classes\MenuScene.h" />
+    <ClInclude Include="..\Classes\Test\BasicSceneTest\BasicSceneTest.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

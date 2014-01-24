@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2014 viva-Lijunlin
+Copyright (c) 2014 Lijunlin - Jason lee
 
-Created by Li JunLin on 2014
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,22 +27,18 @@ THE SOFTWARE.
 #ifndef __CCBASE_BUNDLE_H__
 #define __CCBASE_BUNDLE_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : 
-///
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
+#include "CCBaseMacros.h"
 #include <map>
 #include <string>
 
 NS_CC_BEGIN
 
 /**
- * class    : CCBundle
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 多类型键值对数据结构
+ * class  : CCBundle
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : bundle data
  */
 class CCBundle : public CCObject
 {
@@ -52,12 +48,9 @@ public:
 	static CCBundle* create();
 
 public:
-	// 键值内容结构定义
-	struct tagValue
+	struct _ccBUNDLEVALUE
 	{
-		// 值类型
-		int nType;
-		// 值的指针变量
+		int   nType;
 		void* pValue;
 	};
 
@@ -90,9 +83,9 @@ protected:
 
 private:
 	void removeValueByKey(const char* key);
-	void removeValue(const tagValue& tValue);
+	void removeValue(const _ccBUNDLEVALUE& tValue);
 
-	std::map<std::string, tagValue> m_mDatas;
+	std::map<std::string, _ccBUNDLEVALUE> m_mDatas;
 };
 
 NS_CC_END

@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2014 viva-Lijunlin
+Copyright (c) 2014 Lijunlin - Jason lee
 
-Created by Li JunLin on 2014
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,7 @@ using namespace std;
 #define CCBUNDLE_BUNDLE 8
 #define CCBUNDLE_OBJECT 9
 #define CCBUNDLE_PARAM 10
-#define MAP_DATAS std::map<std::string, tagValue>
+#define MAP_DATAS std::map<std::string, _ccBUNDLEVALUE>
 
 NS_CC_BEGIN
 
@@ -126,7 +126,7 @@ CCObject* CCBundle::copyWithZone(CCZone* pZone)
 	return pRet;
 }
 
-void CCBundle::removeValue(const tagValue& tValue)
+void CCBundle::removeValue(const _ccBUNDLEVALUE& tValue)
 {
 	switch(tValue.nType)
 	{
@@ -178,7 +178,7 @@ void CCBundle::putShort(const char* key, short value)
 {
 	removeValueByKey(key);
 	short* ret = new short(value);
-	tagValue tag = { CCBUNDLE_SHORT, ret };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_SHORT, ret };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -186,7 +186,7 @@ void CCBundle::putUShort(const char* key, unsigned short value)
 {
 	removeValueByKey(key);
 	unsigned short* ret = new unsigned short(value);
-	tagValue tag = { CCBUNDLE_UNSIGNEDSHORT, ret };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_UNSIGNEDSHORT, ret };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -194,7 +194,7 @@ void CCBundle::putInt(const char* key, int value)
 {
 	removeValueByKey(key);
 	int* ret = new int(value);
-	tagValue tag = { CCBUNDLE_INT, ret };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_INT, ret };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -202,7 +202,7 @@ void CCBundle::putUInt(const char* key, unsigned int value)
 {
 	removeValueByKey(key);
 	unsigned int* ret = new unsigned int(value);
-	tagValue tag = { CCBUNDLE_UNSIGNEDINT, ret };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_UNSIGNEDINT, ret };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -210,7 +210,7 @@ void CCBundle::putFloat(const char* key, float value)
 {
 	removeValueByKey(key);
 	float* ret = new float(value);
-	tagValue tag = { CCBUNDLE_FLOAT, ret };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_FLOAT, ret };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -218,7 +218,7 @@ void CCBundle::putDouble(const char* key, double value)
 {
 	removeValueByKey(key);
 	double* ret = new double(value);
-	tagValue tag = { CCBUNDLE_DOUBLE, ret };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_DOUBLE, ret };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -230,7 +230,7 @@ void CCBundle::putString(const char* key, const char* value)
 	memcpy(ret, value, ulen);
 	ret[ulen] = '\0';
 
-	tagValue tag = { CCBUNDLE_STRING, ret };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_STRING, ret };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -238,7 +238,7 @@ void CCBundle::putBundle(const char* key, CCBundle* value)
 {
 	removeValueByKey(key);
 	value->retain();
-	tagValue tag = { CCBUNDLE_BUNDLE, value };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_BUNDLE, value };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
@@ -246,14 +246,14 @@ void CCBundle::putObject(const char* key, CCObject* value)
 {
 	removeValueByKey(key);
 	value->retain();
-	tagValue tag = { CCBUNDLE_OBJECT, value };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_OBJECT, value };
 	m_mDatas.insert(make_pair(key, tag));
 }
 
 void CCBundle::putParam(const char* key, void* value)
 {
 	removeValueByKey(key);
-	tagValue tag = { CCBUNDLE_PARAM, value };
+	_ccBUNDLEVALUE tag = { CCBUNDLE_PARAM, value };
 	m_mDatas.insert(make_pair(key, tag));
 }
 

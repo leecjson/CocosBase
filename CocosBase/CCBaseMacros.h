@@ -24,30 +24,48 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#ifndef __CCBASE_H__
-#define __CCBASE_H__
+#ifndef __CCBASE_CCBASEMACROS_H__
+#define __CCBASE_CCBASEMACROS_H__
 
 #include "cocos2d.h"
+// if using CocosWidget, go include cocos-widget.h here
+// #include "cocos-widget.h"
+// end
+
+// using CocosWidget that change the USING_COCOSWIDGET to 1
+#ifndef USING_COCOSWIDGET
+#define USING_COCOSWIDGET 0
+#endif 
 
 NS_CC_BEGIN
 
 class CCSceneExtension;
 class CCSceneManager;
-class CCSceneExTransition;
-class CCBundle;
-class CCMsgDelegate;
-class CCMsgManager;
+
+typedef CCSceneExtension* (*Fn_CreateSceneExtension)();
 
 NS_CC_END
 
-#include "CCBaseMacros.h"
-#include "CCMsgManager.h"
-#include "CCMsgDelegate.h"
-#include "CCBundle.h"
-#include "CCSceneManager.h"
-#include "CCSceneExtension.h"
-#include "CCSceneExTransition.h"
+#ifndef CREATE_SCENE_FUNC
+#define CREATE_SCENE_FUNC(_CLASS_) \
+static CCSceneExtension* createThisScene() { return new _CLASS_; }
+#endif
+
+#ifndef REGISTER_SCENE_FUNC
+#define REGISTER_SCENE_FUNC(_CLASS_) \
+cocos2d::CCSceneManager::sharedManager()->registerSceneClass(#_CLASS_, &_CLASS_::createThisScene)
+#endif
+
+#ifndef LoadScene
+#define LoadScene(_CLASS_) \
+cocos2d::CCSceneManager::sharedManager()->loadScene(_CLASS_)
+#endif
+
+#ifndef SeekScene
+#define SeekScene(_CLASS_) \
+cocos2d::CCSceneManager::sharedManager()->seekScene(_CLASS_)
+#endif
 
 
 
-#endif //__CCBASE_H__
+#endif //__CCBASE_CCBASEMACROS_H__
