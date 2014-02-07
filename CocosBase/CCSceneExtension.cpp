@@ -27,6 +27,10 @@ THE SOFTWARE.
 #include "CCSceneExtension.h"
 #include "CCSceneManager.h"
 using namespace std;
+#if USING_COCOSWIDGET
+using namespace cocos2d::cocoswidget;
+#endif
+
 
 NS_CC_BEGIN
 

@@ -43,7 +43,7 @@ NS_CC_BEGIN
  */
 class CCSceneExtension 
 #if USING_COCOSWIDGET //using CWidgetWindow base scene
-: public CWidgetWindow
+: public cocos2d::cocoswidget::CWidgetWindow
 #else
 : public CCNode
 #endif
