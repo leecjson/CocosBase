@@ -168,7 +168,7 @@ void CCSceneManager::pushScene(CCSceneExtension* pScene, CCObject* pExtra)
 	tSceneSwitch.eType = eSceneSwitchPushScene;
 	tSceneSwitch.bLockedSwitch = true;
 
-	setExtraToScene(pScene, tSceneSwitch.pExtra);
+	setExtraToScene(pScene, pExtra);
 	m_lSceneSwitchQueue.push_back(tSceneSwitch);
 	
 	CC_SAFE_RETAIN(pScene);
@@ -193,7 +193,7 @@ void CCSceneManager::replaceScene(CCSceneExtension* pScene, CCObject* pExtra)
 	tSceneSwitch.eType = eSceneSwitchReplaceScene;
 	tSceneSwitch.bLockedSwitch = true;
 
-	setExtraToScene(pScene, tSceneSwitch.pExtra);
+	setExtraToScene(pScene, pExtra);
 	m_lSceneSwitchQueue.push_back(tSceneSwitch);
 
 	CC_SAFE_RETAIN(pScene);
